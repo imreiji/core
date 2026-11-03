@@ -8,7 +8,7 @@
 	const sessionQuery = $derived.by(() => getInstructorTrainingSession(data.id));
 	const pageTitle = $derived(
 		sessionQuery.current
-			? `${sessionQuery.current.student.name} - ${sessionQuery.current.course.name} Session - ${sessionQuery.current.startsAt.toLocaleDateString('en-GB', { timeZone: 'UTC' })}`
+			? `${sessionQuery.current.student.name} - ${sessionQuery.current.startsAt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', timeZone: 'UTC' })}`
 			: 'Training Session'
 	);
 </script>
